@@ -25,7 +25,7 @@ const AboutSection = ({ tweaks }) => {
   return (
     <section id="about" ref={ref} style={{ background: dark, padding: '100px 40px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'start' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'start' }}>
 
           {/* Left — Story */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateX(0)' : 'translateX(-30px)', transition: 'all 0.8s ease' }}>
@@ -91,7 +91,15 @@ const AboutSection = ({ tweaks }) => {
           </div>
         </div>
       </div>
-      <style>{`@media(max-width:900px){#about .grid{grid-template-columns:1fr!important;}}`}</style>
+      <style>{`
+        @media(max-width:900px){
+          .about-grid{grid-template-columns:1fr!important;gap:48px!important;}
+        }
+        @media(max-width:640px){
+          #about{padding:60px 20px!important;}
+          .about-grid{gap:40px!important;}
+        }
+      `}</style>
     </section>
   );
 };
