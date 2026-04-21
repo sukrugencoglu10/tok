@@ -61,14 +61,15 @@ const TestimonialsSection = ({ tweaks }) => {
         </div>
 
         {/* Dots */}
-        <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 32 }}>
+        <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 32, alignItems: 'center' }}>
           {testimonials.map((_, i) => (
-            <button key={i} onClick={() => setIdx(i)} style={{
-              width: idx === i ? 28 : 8, height: 8, borderRadius: 4,
-              background: idx === i ? gold : '#ddd',
-              border: 'none', cursor: 'pointer',
+            <span key={i} onClick={() => setIdx(i)} style={{
+              display: 'inline-block',
+              width: idx === i ? 24 : 6, height: 6, borderRadius: 3,
+              background: idx === i ? gold : '#ccc',
+              cursor: 'pointer',
               transition: 'all 0.3s',
-              padding: 0,
+              flexShrink: 0,
             }} />
           ))}
         </div>
